@@ -42,7 +42,8 @@ Keep this file versioned along with other config files
 #### Usage
 
 1. npm install -g config-migrate
-2. config-migrate config_files migration_files
+2. Run the following command
+> config-migrate config_folder_full_path migration_files_folder_full_path
 
 
 #### Current Limitations

@@ -1,7 +1,7 @@
 {
   "name": "config-migrate",
   "description": "Maintain migration scripts for a bunch of json files",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "http://bahmni.org",
   "author": {
     "name": "Bahmni",
@@ -22,7 +22,7 @@
   ],
   "preferGlobal": true,
   "bin": {
-    "bahmni-migrate": "lib/runner.js"
+    "config-migrate": "lib/runner.js"
   },
   "engines": {
     "node": ">= 0.8.0"
