@@ -2,31 +2,23 @@
 Tool (built as node module) to track, manage and apply structural/data changes to your json config files
 
 <pre>
-                                        config-migrate                                           
-                                                                                                    
-+---+                                   XXXXXXXXXXXXXXX                 +---+                       
-+-------------------------+            +---------------+                +--------------------------+
-|                         |           X|               |X               |                          |
-|                         |           X|       X       |X   +------>    |                          |
-|      Config Files       |  +----->  X|      XXX      |X   |           |   Updated Config Files   |
-|                         |           X|       X       |X   +------>    |                          |
-|                         |           X|               |X               |                          |
-|                         |           X|               |X               |                          |
-+-------------------------+            +---------------+                +--------------------------+
-                                        XXXXXXXXXXXXXXX                                             
-                                                                                                    
-                                               ^                                                    
-                                               |                                                    
-                                               |                                                    
-                                               +                                                    
-                                +---+                                                               
-                                +-----------------------------+                                     
-                                |                             |                                     
-                                |                             |                                     
-                                |       Migration Files       |                                     
-                                |                             |                                     
-                                |                             |                                     
-                                +-----------------------------+                                     
+    
+    +---+                                                 +---+                     
+    +---------------------+       +---------------+       +----------------------+
+    |                     |       |               |       |                      |
+    | Bahmni Config Files | +-----> config-migrate| +---> | Updated Config Files |
+    |                     |       |               |       |                      |
+    +---------------------+       +-------^-------+       +----------------------+
+                                          |                                       
+                                          |                                       
+                                          +                                       
+                                 |---|                                          
+                                 |-----------------+                              
+                                 |                 |                              
+                                 | Migration Files |                              
+                                 |                 |                              
+                                 +-----------------+                              
+    
 </pre>
 
 Where,
