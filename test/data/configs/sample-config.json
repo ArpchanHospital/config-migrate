@@ -1,0 +1,15 @@
+[
+    {
+        "id": "first",
+        "description": "Some description 1",
+        "value": 14.402094180695713
+    },
+    {
+        "id": "second",
+        "description": "Some description 2"
+    },
+    {
+        "id": "third",
+        "description": "Some description 3"
+    }
+]

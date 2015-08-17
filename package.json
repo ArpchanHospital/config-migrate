@@ -1,0 +1,40 @@
+{
+  "name": "config-migrate",
+  "description": "Maintain migration scripts for a bunch of json files",
+  "version": "0.1.0",
+  "homepage": "http://bahmni.org",
+  "author": {
+    "name": "Bahmni",
+    "email": "bahmni@thoughtworks.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Bahamni/config-migrate.git"
+  },
+  "bugs": {
+    "url": "https://trello.com/bahmni"
+  },
+  "licenses": [
+    {
+      "type": "GNU Affero General Public License",
+      "url": "https://www.gnu.org/licenses/agpl-3.0.html"
+    }
+  ],
+  "preferGlobal": true,
+  "bin": {
+    "bahmni-migrate": "lib/runner.js"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt": "~0.4.5"
+  },
+  "keywords": []
+}
