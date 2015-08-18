@@ -42,10 +42,16 @@ exports.migrateTests = {
 
     'should throw error for config file not present': function(test) {
         var migrator = new Migrator("V1__first.js", this.configDirectory, this.migrationDirectory);
+        var logMessage = false;
+        var originalLog = console.log;
+        console.log = function(message) {
+            originalLog(message);
+            logMessage = message;
+            return;
+        };
 
-        test.throws(function() {
-            migrator.execute("not-found.json", function(jsonObj){});
-        });
+        migrator.execute("not-found.json", function(jsonObj){});
+        test.equal(logMessage, "Config file not found: " + this.configDirectory + "/not-found.json");
         test.done();
     }
 };
