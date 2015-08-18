@@ -1,6 +1,6 @@
 'use strict';
 
-var Migrator = require('../lib/migrator.js');
+var migrator = require('../lib/migrator.js');
 var fs = require('fs');
 
 exports.migrateTests = {
@@ -12,11 +12,11 @@ exports.migrateTests = {
         callback();
     },
 
-    migrate: function (test) {
+    'default migrate': function (test) {
         var value = Math.random() * 100;
-        var migrator = new Migrator("V1__first.js", this.configDirectory, this.migrationDirectory);
+        migrator("V1__first.js", this.configDirectory, this.migrationDirectory);
 
-        migrator.execute(this.configFile, function (jsonObject) {
+        migrate(this.configFile, function (jsonObject) {
             jsonObject[0].value = value;
             return jsonObject;
         });
@@ -29,9 +29,9 @@ exports.migrateTests = {
     'if migration does not return anything dont write the config file': function(test) {
         var configFilePath = this.configDirectory + "/" + this.configFile;
         var initialFileContents = fs.readFileSync(configFilePath, 'utf-8');
-        var migrator = new Migrator("V1__first.js", this.configDirectory, this.migrationDirectory);
+        migrator("V1__first.js", this.configDirectory, this.migrationDirectory);
 
-        migrator.execute(this.configFile, function(jsonObject) {
+        migrate(this.configFile, function(jsonObject) {
             //return nothing as there is nothing to be done based on some condition;
         });
 
@@ -41,7 +41,7 @@ exports.migrateTests = {
     },
 
     'should throw error for config file not present': function(test) {
-        var migrator = new Migrator("V1__first.js", this.configDirectory, this.migrationDirectory);
+        migrator("V1__first.js", this.configDirectory, this.migrationDirectory);
         var logMessage = false;
         var originalLog = console.log;
         console.log = function(message) {
@@ -50,7 +50,7 @@ exports.migrateTests = {
             return;
         };
 
-        migrator.execute("not-found.json", function(jsonObj){});
+        migrate("not-found.json", function(jsonObj){});
         test.equal(logMessage, "Config file not found: " + this.configDirectory + "/not-found.json");
         test.done();
     }
