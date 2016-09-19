@@ -1,7 +1,7 @@
 {
   "name": "config-migrate",
   "description": "Maintain migration scripts for a bunch of json files",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "homepage": "http://bahmni.org",
   "author": {
     "name": "Bahmni",
