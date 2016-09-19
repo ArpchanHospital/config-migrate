@@ -35,6 +35,8 @@ The migration files follow a naming convention
 > * __ - separator
 > * convert_arrays_to_maps - name of the migration
 
+The migration can use lodash methods in it
+
 #### Config Files
 When the migrations are run, a file named 'migration-run-log.txt' will be generated to remember the already run migrations. 
 Keep this file versioned along with other config files
@@ -45,8 +47,4 @@ Keep this file versioned along with other config files
 2. Run the following command
 > config-migrate config_folder_full_path migration_files_folder_full_path
 
-
-#### Current Limitations
-
-1. Migrations cannot include any other libraries like underscore
 
